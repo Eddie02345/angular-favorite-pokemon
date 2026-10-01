@@ -1,1 +1,13 @@
-<p>pokemart works!</p>
+<div class="page-header">
+  <div>
+    <h1>🏪 PokéMart</h1>
+    <p>Stock up before your next adventure.</p>
+  </div>
+  <span class="pill">{{ mart.items().length }} Items</span>
+</div>
+
+<div class="grid">
+  @for (i of mart.items(); track i.id) {
+    <app-mart-item [item]="i" (add)="mart.addToCart($event)" />
+  }
+</div>

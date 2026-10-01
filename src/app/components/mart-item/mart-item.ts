@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, input, output } from '@angular/core';
+import { MartItem as MartItemModel } from '../../models';
 
 @Component({
-  imports: [],
   selector: 'app-mart-item',
-  styleUrl: './mart-item.css',
   templateUrl: './mart-item.html',
+  styleUrl: './mart-item.css',
 })
-export class MartItem {}
+export class MartItem {
+  item = input.required<MartItemModel>();
+  add = output<MartItemModel>();
+}

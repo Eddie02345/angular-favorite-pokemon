@@ -1,1 +1,25 @@
-<p>cart works!</p>
+<div class="page-header">
+  <div>
+    <h1>🛒 Your Cart</h1>
+    <p>Review your items before checkout.</p>
+  </div>
+  <span class="pill">{{ mart.cartCount() }} Items</span>
+</div>
+
+@for (l of mart.cartLines(); track l.item.id) {
+  <div class="line">
+    <span class="name">{{ l.item.emoji }} {{ l.item.name }}
+      <span class="qty">× {{ l.qty }}</span></span>
+    <span class="price">₽{{ l.item.price * l.qty }}</span>
+    <button class="btn danger" (click)="mart.removeFromCart(l.item.id)">Remove</button>
+  </div>
+} @empty {
+  <p class="empty">Your cart is empty. <a routerLink="/pokemart">Go shopping!</a></p>
+}
+
+@if (mart.cartCount() > 0) {
+  <div class="summary panel">
+    <h2>Total: ₽{{ mart.total() }}</h2>
+    <button class="btn danger" (click)="mart.clearCart()">Clear Cart</button>
+  </div>
+}

@@ -1,0 +1,14 @@
+.line {
+  display: flex; align-items: center; gap: 1rem;
+  background: var(--surface0); border: 1px solid var(--surface1);
+  border-left: 4px solid var(--lavender);
+  padding: 0.7rem 1rem; margin-bottom: 0.6rem; border-radius: 8px;
+}
+.name { flex: 1; font-weight: 600; }
+.qty { color: var(--subtext0); font-weight: 400; margin-left: 0.4rem; }
+.price { color: var(--green); font-weight: 700; }
+.line .btn { flex: 0 0 auto; }
+.summary { display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; }
+.summary h2 { color: var(--green); }
+.summary .btn { flex: 0 0 auto; }
+.empty { color: var(--subtext0); }
