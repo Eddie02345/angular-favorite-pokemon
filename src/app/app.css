@@ -1,7 +1,29 @@
 nav {
-  display: flex; gap: 1rem; flex-wrap: wrap;
-  padding: 1rem; background: #cc0000;
+  display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;
+  padding: 0.9rem 1.5rem;
+  background: var(--mantle);
+  border-bottom: 1px solid var(--surface0);
 }
-nav a { color: white; text-decoration: none; font-weight: bold; padding: 0.3rem 0.6rem; border-radius: 6px; }
-nav a.active { background: rgba(255, 255, 255, 0.25); }
-main { padding: 1.5rem; max-width: 1000px; margin: 0 auto; }
+.brand { font-weight: 700; color: var(--lavender); margin-right: auto; }
+.brand small { font-weight: 400; color: var(--overlay1); margin-left: 0.5rem; }
+
+nav a.link {
+  display: flex; align-items: center; gap: 0.4rem;
+  padding: 0.4rem 0.8rem; border-radius: 6px;
+  color: var(--subtext1); text-decoration: none; font-weight: 600; font-size: 0.9rem;
+}
+nav a.link:hover { color: var(--text); background: var(--surface0); }
+nav a.link.active { color: var(--lavender); background: var(--surface0); }
+
+.count {
+  font-size: 0.7rem; padding: 0.05rem 0.4rem; border-radius: 4px;
+  background: var(--surface1); color: var(--subtext1);
+}
+
+main { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; min-height: 70vh; }
+
+footer {
+  padding: 1.2rem 1.5rem; background: var(--mantle);
+  border-top: 1px solid var(--surface0);
+  color: var(--overlay1); font-size: 0.85rem; text-align: center;
+}
