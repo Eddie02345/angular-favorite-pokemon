@@ -1,1 +1,15 @@
-<p>pokemon-card works!</p>
+<article class="card" [style.--accent]="accent()">
+  <header>
+    <h3>
+      {{ pokemon().emoji }} {{ pokemon().name }}
+      <span class="type">{{ pokemon().type }}</span>
+    </h3>
+    <span class="badge">{{ pokemon().heldItem }}</span>
+  </header>
+
+  <div class="panel">
+    <p class="label">Description</p>
+    {{ pokemon().description }}
+  </div>
+
+</article>
