@@ -8,9 +8,10 @@ import { RouterLink } from '@angular/router';
   styleUrl: './home.css',
 })
 export class Home {
-  regions = [
-    { id: 'kanto', label: 'Kanto', emoji: '🗻', color: 'var(--red)' },
-    { id: 'johto', label: 'Johto', emoji: '🔔', color: 'var(--yellow)' },
-    { id: 'hoenn', label: 'Hoenn', emoji: '🌴', color: 'var(--teal)' },
+  cards = [
+    { label: 'Kanto',    emoji: '🗻', color: 'var(--red)',    link: '/region/kanto' },
+    { label: 'Johto',    emoji: '🔔', color: 'var(--yellow)', link: '/region/johto' },
+    { label: 'Hoenn',    emoji: '🌴', color: 'var(--teal)',   link: '/region/hoenn' },
+    { label: 'PokéMart', emoji: '🏪', color: 'var(--mauve)',  link: '/pokemart' },
   ];
 }

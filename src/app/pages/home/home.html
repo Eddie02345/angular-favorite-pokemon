@@ -6,10 +6,10 @@
 </div>
 
 <div class="grid">
-  @for (r of regions; track r.id) {
-    <a class="card region" [style.--accent]="r.color" [routerLink]="['/region', r.id]">
-      <span class="big">{{ r.emoji }}</span>
-      <h2>{{ r.label }}</h2>
+  @for (c of cards; track c.label) {
+    <a class="card tile" [style.--accent]="c.color" [routerLink]="c.link">
+      <span class="big">{{ c.emoji }}</span>
+      <h2>{{ c.label }}</h2>
     </a>
   }
 </div>
