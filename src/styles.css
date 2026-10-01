@@ -1,1 +1,88 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  /* Catppuccin Mocha */
+  --crust: #11111b;  --mantle: #181825;  --base: #1e1e2e;
+  --surface0: #313244; --surface1: #45475a; --surface2: #585b70;
+  --overlay0: #6c7086; --overlay1: #7f849c;
+  --text: #cdd6f4; --subtext1: #bac2de; --subtext0: #a6adc8;
+  --lavender: #b4befe; --blue: #89b4fa; --sapphire: #74c7ec; --sky: #89dceb;
+  --teal: #94e2d5; --green: #a6e3a1; --yellow: #f9e2af; --peach: #fab387;
+  --maroon: #eba0ac; --red: #f38ba8; --mauve: #cba6f7; --pink: #f5c2e7;
+  --flamingo: #f2cdcd; --rosewater: #f5e0dc;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: var(--base);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+h1, h2, h3 { margin: 0; color: var(--lavender); }
+
+/* page header with a pill on the right */
+.page-header {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  gap: 1rem; flex-wrap: wrap;
+  padding-bottom: 1rem; margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--surface0);
+}
+.page-header p { margin: 0.4rem 0 0; color: var(--subtext0); font-size: 0.9rem; }
+
+.pill {
+  padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.8rem;
+  color: var(--red); border: 1px solid var(--red);
+  background: color-mix(in srgb, var(--red) 12%, transparent);
+}
+
+.grid {
+  display: grid; gap: 1.2rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+/* card with an accent-colored left edge */
+.card {
+  background: var(--surface0);
+  border: 1px solid var(--surface1);
+  border-left: 4px solid var(--accent, var(--lavender));
+  border-radius: 8px;
+  padding: 1.1rem;
+  display: flex; flex-direction: column; gap: 0.8rem;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35); }
+
+/* dark inset box */
+.panel {
+  background: var(--mantle);
+  border: 1px solid var(--surface1);
+  border-radius: 6px;
+  padding: 0.7rem 0.8rem;
+  font-size: 0.88rem;
+}
+.label {
+  margin: 0 0 0.3rem; font-size: 0.7rem; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--subtext0);
+}
+
+.badge {
+  font-size: 0.72rem; padding: 0.2rem 0.55rem; border-radius: 4px;
+  color: var(--accent, var(--lavender));
+  border: 1px solid var(--accent, var(--lavender));
+  background: color-mix(in srgb, var(--accent, var(--lavender)) 12%, var(--mantle));
+}
+
+.btn {
+  flex: 1; padding: 0.55rem 0.8rem; cursor: pointer;
+  background: var(--mantle); color: var(--text);
+  border: 1px solid var(--surface1); border-radius: 6px;
+  font-weight: 600; font-size: 0.85rem;
+}
+.btn:hover { background: var(--surface1); border-color: var(--lavender); }
+.btn.primary { background: var(--lavender); color: var(--crust); border-color: var(--lavender); }
+.btn.primary:hover { background: var(--blue); border-color: var(--blue); }
+.btn.danger:hover { border-color: var(--red); color: var(--red); }
+.actions { display: flex; gap: 0.5rem; }
