@@ -14,7 +14,7 @@ export class PokemonService {
       { name: 'Gyarados', type: 'Water/Flying', heldItem: 'Mystic Water', emoji: '🐉',
         description: 'A furious sea serpent that destroys everything in its rage.' },
       { name: 'Snorlax', type: 'Normal', heldItem: 'Leftovers', emoji: '😴',
-        description: 'Eats and sleeps all day, blocking roads while napping.' },
+        description: 'Eats and sleeps all day, blocking roads while napping. Pokemom embodiment of me.' },
       { name: 'Pikachu', type: 'Electric', heldItem: 'Light Ball', emoji: '⚡',
         description: 'Stores electricity in its cheeks and zaps when angry.' },
     ],
