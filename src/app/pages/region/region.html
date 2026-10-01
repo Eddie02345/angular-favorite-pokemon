@@ -1,1 +1,16 @@
-<p>region works!</p>
+<div class="page-header">
+  <div>
+    <h1>{{ region() | titlecase }} Region</h1>
+    <p>My six favorite Pokémon, their types, and held items.</p>
+  </div>
+  <span class="pill">{{ pokemon().length }} Favorites</span>
+</div>
+
+
+<div class="grid">
+  @for (p of pokemon(); track p.name) {
+    <app-pokemon-card [pokemon]="p" (picked)="selected.set($event)" />
+  } @empty {
+    <p>No Pokémon found for this region.</p>
+  }
+</div>

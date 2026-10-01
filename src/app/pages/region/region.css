@@ -1,0 +1,5 @@
+.chosen {
+  background: color-mix(in srgb, var(--yellow) 15%, var(--mantle));
+  border: 1px solid var(--yellow); color: var(--yellow);
+  padding: 0.6rem 1rem; border-radius: 6px; margin-bottom: 1.2rem;
+}

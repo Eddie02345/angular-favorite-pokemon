@@ -1,9 +1,9 @@
 import { Injectable, signal } from '@angular/core';
-import { Pokemon, Region } from './models';
+import { Pokemon, RegionId } from './models';
 
 @Injectable({ providedIn: 'root' })
 export class PokemonService {
-  private pokemon = signal<Record<Region, Pokemon[]>>({
+  private pokemon = signal<Record<RegionId, Pokemon[]>>({
     kanto: [
       { name: 'Charizard', type: 'Fire/Flying', heldItem: 'Charcoal', emoji: '🔥',
         description: 'Breathes fire hot enough to melt boulders.' },
@@ -12,7 +12,7 @@ export class PokemonService {
       { name: 'Alakazam', type: 'Psychic', heldItem: 'Twisted Spoon', emoji: '🥄',
         description: 'Has an IQ of around 5000 and remembers everything.' },
       { name: 'Gyarados', type: 'Water/Flying', heldItem: 'Mystic Water', emoji: '🐉',
-        description: 'Furious sea serpent that destroys everything in its rage.' },
+        description: 'A furious sea serpent that destroys everything in its rage.' },
       { name: 'Snorlax', type: 'Normal', heldItem: 'Leftovers', emoji: '😴',
         description: 'Eats and sleeps all day, blocking roads while napping.' },
       { name: 'Pikachu', type: 'Electric', heldItem: 'Light Ball', emoji: '⚡',
@@ -48,7 +48,7 @@ export class PokemonService {
     ],
   });
 
-  getByRegion(region: Region): Pokemon[] {
+  getByRegion(region: RegionId): Pokemon[] {
     return this.pokemon()[region] ?? [];
   }
 }
