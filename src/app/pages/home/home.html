@@ -1,1 +1,15 @@
-<p>home works!</p>
+<div class="page-header">
+  <div>
+    <h1>My Favorite Pokémon</h1>
+    <p>Pick a region to see my favorites, or shop at the PokéMart.</p>
+  </div>
+</div>
+
+<div class="grid">
+  @for (r of regions; track r.id) {
+    <a class="card region" [style.--accent]="r.color" [routerLink]="['/region', r.id]">
+      <span class="big">{{ r.emoji }}</span>
+      <h2>{{ r.label }}</h2>
+    </a>
+  }
+</div>
