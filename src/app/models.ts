@@ -1,6 +1,7 @@
 export type RegionId = 'johto' | 'kanto' | 'hoenn';
 
 export interface Pokemon {
+  dex: number;
   name: string;
   type: string;
   heldItem: string;

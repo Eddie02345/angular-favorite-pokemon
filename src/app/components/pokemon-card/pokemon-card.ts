@@ -22,4 +22,7 @@ export class PokemonCard {
     const primary = this.pokemon().type.split('/')[0];
     return TYPE_COLORS[primary] ?? 'var(--lavender)';
   });
+
+  image = computed(() =>
+  `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${this.pokemon().dex}.png`);
 }

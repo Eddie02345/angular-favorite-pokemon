@@ -1,4 +1,5 @@
 <article class="card" [style.--accent]="accent()">
+    <img class="sprite" [src]="image()" [alt]="pokemon().name" loading="lazy" />
   <header>
     <h3>
       {{ pokemon().emoji }} {{ pokemon().name }}
