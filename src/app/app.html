@@ -1,12 +1,21 @@
 <nav>
-  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">🏠 Home</a>
-  <a routerLink="/region/kanto" routerLinkActive="active">Kanto</a>
-  <a routerLink="/region/johto" routerLinkActive="active">Johto</a>
-  <a routerLink="/region/hoenn" routerLinkActive="active">Hoenn</a>
-  <a routerLink="/pokemart" routerLinkActive="active">🏪 PokéMart</a>
-  <a routerLink="/cart" routerLinkActive="active">🛒 Cart ({{ mart.cartCount() }})</a>
+  <span class="brand">Pokémon Showcase <small>Favorites &amp; PokéMart</small></span>
+
+  <a class="link" routerLink="/" routerLinkActive="active"
+     [routerLinkActiveOptions]="{ exact: true }">Home</a>
+
+  @for (r of regions; track r) {
+    <a class="link" [routerLink]="['/region', r]" routerLinkActive="active">
+      {{ r | titlecase }} <span class="count">{{ pokemon.getByRegion(r).length }}</span>
+    </a>
+  }
+
+  <a class="link" routerLink="/pokemart" routerLinkActive="active">🏪 PokéMart</a>
+  <a class="link" routerLink="/cart" routerLinkActive="active">
+    🛒 Cart <span class="count">{{ mart.cartCount() }}</span>
+  </a>
 </nav>
 
-<main>
-  <router-outlet />
-</main>
+<main><router-outlet /></main>
+
+<footer>CSAPPD1 • Laboratory Activity 5</footer>
