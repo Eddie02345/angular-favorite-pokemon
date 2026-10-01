@@ -6,10 +6,9 @@
   <span class="pill">{{ pokemon().length }} Favorites</span>
 </div>
 
-
 <div class="grid">
   @for (p of pokemon(); track p.name) {
-    <app-pokemon-card [pokemon]="p" (picked)="selected.set($event)" />
+    <app-pokemon-card [pokemon]="p" />
   } @empty {
     <p>No Pokémon found for this region.</p>
   }
