@@ -1,3 +1,4 @@
 .top { display: flex; justify-content: space-between; align-items: center; }
 .emoji { font-size: 2.2rem; }
 h3 { color: var(--text); font-size: 1.05rem; }
+.sprite { width: 48px; height: 48px; image-rendering: pixelated; }

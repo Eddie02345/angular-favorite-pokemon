@@ -14,6 +14,7 @@ export interface MartItem {
   name: string;
   price: number;
   emoji: string;
+  sprite: string;
 }
 
 export interface CartLine {

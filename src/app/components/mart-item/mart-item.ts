@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, computed, input, output } from '@angular/core';
 import { MartItem as MartItemModel } from '../../models';
 
 @Component({
@@ -9,4 +9,6 @@ import { MartItem as MartItemModel } from '../../models';
 export class MartItem {
   item = input.required<MartItemModel>();
   add = output<MartItemModel>();
+image = computed(() =>
+  `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/${this.item().sprite}.png`);
 }
